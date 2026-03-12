@@ -24,3 +24,4 @@ class NoteStorage:
                 return
         print(f"Заметка {note_id} не найдена")
         # Это написала ДИАНА
+
