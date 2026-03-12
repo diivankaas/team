@@ -9,7 +9,7 @@ class NoteStorage:
         print(f"Добавлена заметка {self.id_counter}")
         self.id_counter += 1
 
-    def get_all_notes(self):
+    def get_all_notes(self): #6767676767
         if len(self.notes) == 0:
             print("Заметок нет")
         else:
