@@ -1,22 +1,23 @@
-def main():
+from storage import NoteStorage
+def main(storage = NoteStorage()):
     while True:
         print("\n--- Менеджер заметок ---")
         print("1. Добавить заметку")
         print("2. Показать все заметки")
         print("3. Удалить заметку по ID")
-        print("4. Выход") #АнькаВстанька
+        print("4. Выход")
 
         choice = input("Выбери действие (1-4): ")
 
         if choice == '1':
             title = input("Введи заголовок: ")
             body = input("Введи текст заметки: ")
-            print(f"-> Здесь будет добавление заметки '{title}'")
+            storage.add_note(title, body)
         elif choice == '2':
-            print("-> Здесь будет показ всех заметок")
+            for note in storage.get_all_notes(): print(note)
         elif choice == '3':
             note_id = input("Введи ID заметки для удаления: ")
-            print(f"-> Здесь будет удаление заметки с ID {note_id}")
+            storage.remove_note(int(note_id))
         elif choice == '4':
             print("Выход...")
             break
