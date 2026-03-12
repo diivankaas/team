@@ -1,5 +1,6 @@
 from storage import NoteStorage
 def main(storage = NoteStorage()):
+        
     while True:
         print("\n--- Менеджер заметок ---")
         print("1. Добавить заметку")
@@ -14,10 +15,10 @@ def main(storage = NoteStorage()):
             body = input("Введи текст заметки: ")
             storage.add_note(title, body)
         elif choice == '2':
-            for note in storage.get_all_notes(): print(note)
+            storage.get_all_notes()
         elif choice == '3':
-            note_id = input("Введи ID заметки для удаления: ")
-            storage.remove_note(int(note_id))
+            note_id = int(input("Введи ID заметки для удаления: "))
+            storage.remove_note(note_id)
         elif choice == '4':
             print("Выход...")
             break
